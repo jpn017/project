@@ -227,5 +227,20 @@ function onClick(element) {
 }
 </script>
 
+<!-- Start of Qontak Webchat Script -->
+<script>
+  const qchatInit = document.createElement('script');
+  qchatInit.src = "https://webchat-staging.qontak.net/qchatInitialize.js";
+  const qchatWidget = document.createElement('script');
+  qchatWidget.src = "https://webchat-staging.qontak.net/js/app.js";
+  document.head.prepend(qchatInit);
+  document.head.prepend(qchatWidget);
+  qchatInit.onload = function() { qchatInitialize({
+    id: "07f725f9-8804-4a08-9bc6-96d66b0a2427", 
+    code: "0ld9OCRg9oOxwhFLoeAKmw"  
+  })};
+</script>
+<!-- End of Qontak Webchat Script -->
+
 </body>
 </html>
