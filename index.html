@@ -227,23 +227,5 @@ function onClick(element) {
 }
 </script>
 
-
-<!-- Start of Qontak Webchat Script — credentials loaded from config.js -->
-<script>
-  (function () {
-    var wc = CONFIG.activeWebchat;
-    var qchatWidget = document.createElement('script');
-    qchatWidget.src = wc.scriptUrl;
-    var qchatInit = document.createElement('script');
-    qchatInit.src = wc.initUrl;
-    document.head.prepend(qchatInit);
-    document.head.prepend(qchatWidget);
-    qchatInit.onload = function () {
-      qchatInitialize({ id: wc.id, code: wc.code });
-    };
-  })();
-</script>
-<!-- End of Qontak Webchat Script -->
-
 </body>
 </html>
