@@ -14,6 +14,28 @@
     </style>
   <!-- Load configurable settings before any scripts -->
   <script src="config.js"></script>
+  <script>
+    // Apply brand color from config before first paint to avoid flash
+    (function () {
+      var color = (window.SITE_CONFIG || {}).brandColor || "red";
+      if (color === "red") return; // default — nothing to swap
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(
+          "[class*='w3-red'],[class*='w3-text-red']"
+        ).forEach(function (el) {
+          el.className = el.className
+            .replace(/\bw3-red\b/g, "w3-" + color)
+            .replace(/\bw3-text-red\b/g, "w3-text-" + color)
+            .replace(/\bw3-hover-red\b/g, "w3-hover-" + color);
+        });
+        // Swap inline border color on <hr> elements
+        document.querySelectorAll("hr").forEach(function (hr) {
+          hr.style.borderColor = "";
+          hr.classList.add("w3-border-" + color);
+        });
+      });
+    })();
+  </script>
   </head>
 <body>
 
@@ -47,7 +69,7 @@
 
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo"><b>Interior Design</b></h1>
+    <h1 class="w3-jumbo"><b>CV Apa ja dah</b></h1>
     <h1 class="w3-xxxlarge w3-text-red"><b>Showcase.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
   </div>

@@ -13,7 +13,7 @@ window.SITE_CONFIG = {
   },
 
   /* ── Brand color (W3.CSS class suffix, e.g. "red", "blue") ────── */
-  brandColor: "red",
+  brandColor: "teal",
 
   /* ── Navigation links (label → anchor id) ─────────────────────── */
   nav: [
